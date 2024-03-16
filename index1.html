@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input  required pattern="\D{3}" id="txt">
+        <button id="btn" onclick="add()" type="button">SAVE</button>
+    </form>
+
+    <ul id="info"></ul>
+    <div id="main">
+        <p id="p1">This is an element node 222</p>
+        This is a text node
+        <h3>This is heading element</h3>
+        <!-- <h1 style="color: white;background: blue;">Ví dụ...</h1> -->
+    </div>
+
+    <script>
+        var  reg = /[0-9]{3,5}/.test('a12');
+        if(!reg)
+
+
+        var info = document.getElementById('info');
+        var txt = document.getElementById('txt');
+        var btn = document.getElementById('btn');
+        // var frag = document.createDocumentFragment();
+        // var arr = ['ONE','TWO','THREE'];
+        // for(let i=0;i<arr.length;i++){
+
+        btn.addEventListener('click',
+        function(){
+            let li = document.createElement('li');
+            li.textContent = txt.value;
+
+            info.appendChild(li); //ảnh hưởng trực tiếp tới bố cục trang
+            txt.value = "";
+            txt.focus();
+        })
+            //frag.appendChild(li);
+        //}
+
+        //info.appendChild(frag);
+
+        // p.innerHTML = '<h1 style="color: white;background: blue;">Ví dụ...</h1>'
+
+        // p.style.color = 'red';
+        // p.style.background = 'green';
+        // document.write(p.getAttribute('id'));
+    </script>
+</body>
+</html>
